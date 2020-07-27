@@ -1,6 +1,21 @@
-import React from "react";
+// Core
+import React from 'react';
+import { ApolloProvider } from '@apollo/react-hooks';
+
+// Components
+import { Pet } from './bus/pet'
+import {Customer} from "./bus/customer"
+
+// Other
+import { client } from './init/client'
+
+
+
 export const App = () => {
   return (
-    <h1>App</h1>
+    <ApolloProvider client={client}>
+      {/*<Pet />*/}
+      <Customer />
+    </ApolloProvider>
   )
-}
+};
