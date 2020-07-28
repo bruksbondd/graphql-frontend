@@ -1,20 +1,21 @@
 // Core
-import React from "react"
-// Hooks
-import { useQueryProfile } from './hooks/useQueryProfile'
+import React from 'react';
 
+// Hooks
+import { useQueryProfile } from './hooks/useQueryProfile';
 
 export const Profile = () => {
-  const { getProfile, loading, error, profile } = useQueryProfile()
+  const { getProfile, loading, error, profile } = useQueryProfile();
+  console.log(profile);
 
   const loadProfile = () => {
     getProfile({
       variables: {
-        id: "C-2"
+        id: 'C-1'
       }
-    })
-  }
-  console.log(profile)
+    });
+  };
+
   if (loading) {
     return <p>Loading...</p>
   }
@@ -36,4 +37,4 @@ export const Profile = () => {
       </p>
     </>
   )
-}
+};

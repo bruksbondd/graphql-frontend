@@ -4,4 +4,3 @@ query petById($id: ID!) {
         name
     }
 }
-

@@ -1,12 +1,15 @@
-import {useMutation} from '@apollo/react-hooks';
-import {loader} from 'graphql.macro';
-import {useForm} from "../useForm"
+// Core
+import { useMutation } from '@apollo/react-hooks';
+import { loader } from 'graphql.macro';
+
+// Hooks
+import { useForm } from '../useForm';
 
 // Mutations
 const mutationCreateAccount = loader('./gql/mutationCreateAccount.graphql');
 
-export const useCustomer = () => {
-  const [addUser, {data}] = useMutation(mutationCreateAccount);
+export const useCustomerCreator = () => {
+  const [_save, { data }] = useMutation(mutationCreateAccount);
   const {form, handleChange} = useForm({
     name: '',
     username: '',
@@ -14,7 +17,7 @@ export const useCustomer = () => {
   });
 
   const save = () => {
-    addUser({
+    _save({
       variables: {
         account: form
       }

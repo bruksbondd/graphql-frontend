@@ -1,11 +1,11 @@
 // Core
-import React from "react"
+import React from 'react';
 
-//Hooks
-import { useQueryAllPets } from './hooks/useQueryAllPets'
+// Hooks
+import { useQueryAllPets } from './hooks/useQueryAllPets';
 
 export const List = () => {
-  const { loading, error, pets} = useQueryAllPets()
+  const { loading, error, pets } = useQueryAllPets();
 
   if (loading) {
     return <p>Loading...</p>
@@ -19,17 +19,17 @@ export const List = () => {
     )
   }
 
-  const petsJsx = pets.map(({id, name, weight}) => (
+  const petsJSX = pets.map(({id, name, weight}) => (
     <p key={id}>
       <span>Name: {name}</span>
       <span>Weight: {weight}</span>
     </p>
-  ))
+  ));
+
   return (
     <>
       <h1>Pets</h1>
-      {petsJsx}
+      {petsJSX}
     </>
   )
-}
-
+};

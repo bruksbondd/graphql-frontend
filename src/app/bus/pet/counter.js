@@ -1,10 +1,11 @@
-import React from "react"
+// Core
+import React from 'react';
 
 // Hooks
-import { useQueryAvailablePets } from './hooks/useQueryAvailablePets'
+import { useQueryAvailablePets } from './hooks/useQueryAvailablePets';
 
 export const Counter = () => {
-  const { loading, error, data, networkStatus } = useQueryAvailablePets()
+  const { loading, error, data, networkStatus } = useQueryAvailablePets();
 
   if (loading) {
     return <p>Loading...</p>
@@ -28,4 +29,4 @@ export const Counter = () => {
       {data.availablePets}
     </p>
   )
-}
+};
